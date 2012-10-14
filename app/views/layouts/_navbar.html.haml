@@ -1,0 +1,11 @@
+.navbar
+	.navbar-inner
+		.container
+			= link_to "NDSC", root_path, class: "brand"
+			%ul.nav
+				%li{ class: params[:action] == "about" ? "active" : nil }= link_to "About", about_path
+				/%li= link_to "Organizations", "#"
+				%li{ class: params[:action] == "host" ? "active" : nil }= link_to "Host", host_path
+				%li{ class: params[:action] == "twelve" ? "active" : nil }= link_to "2012", twelve_path
+			%ul.nav.pull-right
+				%li= link_to "Registration Coming Soon!", "#"

@@ -1,0 +1,50 @@
+- provide :title, "2013"
+
+= render "header_2013"
+.container.content
+	.row
+		.span3
+			.left_column
+				%ul.nav.nav-tabs.nav-stacked{ "data-spy" => "affix", "data-offset-top" => "171" }
+					-# [ "welcome", "keynote", "agenda", "panelists", "housing", "sponsors" ]
+					- [ "about", "history"].each do |s|
+						%li{ class: s == "about" ? "active" : nil }
+							= link_to "##{s}" do
+								= s.titlecase
+								%i.icon-chevron-right
+		.span9
+			#about.section
+				%h1 About
+				.section-prompt
+					== "NDSC is an annual conference that brings together Dominican college students and alumni from throughout the United States. Each year the NDSC Board undergoes a #{link_to "selection process", "#"} in which it accepts bids from potential host schools and selects where the next NDSC will be held."
+				.section-content.section-content-indented
+					%h4 Purpose
+					%ul
+						%li Unite the numerous undergraduate and graduate Dominican student communities currently dispersed throughout the United States, with the goal of addressing and organizing them more effectively against the social and academic issues that continue to afflict them.
+						%br
+						%li Serve as an opportunity for the community to collectively celebrate the rich Dominican heritage that its members share and continue to keep alive in their respective college communities.
+					%h4 Objective
+					%blockquote 
+						The conference's key objective is the building of <strong>social and academic support networks</strong> among participants, particularly among those living in adjacent cities/regions. It believes that increasing collaboration between Dominican student groups and community organizations will help create a more comfortable, more familiar environment for Dominican students - and thus positively affecting the waning rates of retention and graduation from which the community suffers. We believe the sponsoring of this kind of networking will lead to each participant gaining a greater understanding of their own community, as well as foster a heightened desire to take socially significant action against the issues highlighted throughout the Conference.		
+			#history.section
+				%h1 History
+				.section-prompt 
+					The idea of a national conference was first proposed in 2007, at a Dominican Student Association - QuisqueYalies meeting by <strong>Jamil Abreu</strong> '08. The group adopted the proposal, with the following individuals making up the conference planning committee:
+					/He observed one of the most significant issues in the community to be the lack of awareness of and communication between collegiate and community-based Dominican groups who, despite sharing similar interests and existing in the same general area, continued to operate independently of each other.
+					
+				.section-content.section-content-indented 
+					= image_tag "founders.jpeg", :title => "QuisqueYalies 2007", :style => "max-width: 400px; float: right"
+					%ul
+						%li <strong>Jamil Abreu</strong> '08 (Co-Chair)
+						%li <strong>Lariely Garcia</strong> '09 (Co-Chair)
+						%li <strong>Damien Abreu</strong> '10
+						%li <strong>Ruben Harris</strong> '08
+						%li <strong>Jose Abreu</strong> '09
+						%li <strong>Brian Marmolejos</strong> '08
+						%li <strong>Mariel Novas</strong> '10
+						%li <strong>Nicolle Quintero</strong> '07
+						%li <strong>Joel Vargas</strong> '08
+						%li <strong>Prof. James Vreeland</strong>
+					%div{style:"clear:both"}
+			#board
+				%h1 Board

@@ -1,0 +1,67 @@
+- provide :title, "2012"
+
+= render "layouts/facebook"
+= render "header_2012"
+.container.content
+	.row
+		.span3
+			.left_column
+				%ul.nav.nav-tabs.nav-stacked{ "data-spy" => "affix", "data-offset-top" => "204" }
+					- [ "keynote", "agenda", "speakers", "workshops" ].each do |s|
+						%li{ class: s == "keynote" ? "active" : nil }
+							= link_to "##{s}" do
+								= s.titlecase
+								%i.icon-chevron-right
+		.span9
+			.right_column
+				/KEYNOTE
+				#keynote.section
+					%h1 Keynote
+					= render partial: "keynote", locals: { keynote: @keynote }
+
+				/FACEBOOK
+				.section	
+					%h1.fb-title Facebook
+					.fb-holder
+						.fb-like-box{ "data-href" => "https://www.facebook.com/pages/National-Dominican-Student-Conference/47619937613", "data-width" => "639",  "data-show-faces" => "true", "data-border-color" => "#D4DAE8", "data-stream" => "false", "data-header" => "false" }
+				
+				/AGENDA
+				#agenda.section
+					%h1 Agenda
+					%br
+					
+					%table.table.table-striped.table-bordered
+						%h4.agenda-date Friday, April 6, 2012
+						%tbody
+							- Event.where("start_time BETWEEN ? AND ?", DateTime.parse('6th Apr 2012'), DateTime.parse('7th Apr 2012')).order("start_time").each do |event|
+								%tr
+									%td.agenda-time-column= event.agenda_time
+									%td.agenda-name-column= event.name
+									%td.agenda-venue-column= event.venue
+
+					%table.table.table-striped.table-bordered
+						%h4.agenda-date Saturday, April 7, 2012
+						%tbody
+							- Event.where("start_time BETWEEN ? AND ?", DateTime.parse('7th Apr 2012'), DateTime.parse('8th Apr 2012')).order("start_time").each do |event|
+								%tr
+									%td.agenda-time-column= event.agenda_time
+									%td.agenda-name-column= event.name
+									%td.agenda-venue-column= event.venue
+						
+				/SPEAKERS
+				#speakers.section
+					%h1 Speakers & Panelists
+					.section-content
+					= render partial: "speaker", collection: @speakers
+
+				/WORKSHOPS
+				#workshops.section
+					%h1 Workshops
+					.section-content
+						= render partial: "workshop", collection: @workshops
+						
+				/
+					#housing
+						%h1 Housing
+					#sponsors
+						%h1 Sponsors

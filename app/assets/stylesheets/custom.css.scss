@@ -1,0 +1,77 @@
+a, a:hover { text-decoration: none; }
+blockquote { }
+	
+body { font-family: "proxima-nova", serif; font-smooth:always; -webkit-font-smoothing: antialiased; }
+
+h1 { border-bottom: 1px solid #DDD; margin: 0; padding: 0 0 5px; color: #AAA; font-size: 30px; line-height: 36px; font-weight: 200; text-transform: uppercase; }
+h4 { margin-top: 0; }
+
+.alert { font-weight: bold; }
+
+.navbar { }
+
+.brand { font-weight: bold; }
+
+.header {}
+.header-brown { background: #000 url("brown/brown-header.jpeg"); background-position: 0 -550px; }
+.header-wesleyan { background: #000 url("wesleyan/wesleyan-header.jpeg"); background-position: 0 -200px; }
+.header-inner { background: rgba(0,0,0,.5); padding: 40px 0; }
+
+.crest { float: left; max-width: 75px; margin-right: 20px; }
+.header-title { color: #FFF; font-size: 46px; font-weight: bold; margin: 14px 0 18px; }
+.header-subtitle { color: #FFF; font-size: 30px; }
+
+.content { padding: 20px 0; }
+
+.left_column { position: relative; }
+.left_column ul { top: 15px; width: 220px; }
+
+.nav-tabs.nav-stacked > li i { float: right; margin: 4px -6px 0 0; }
+.nav-tabs.nav-stacked > li a { color: #999; font-weight: bold; }
+.nav-tabs.nav-stacked > li.active a { position: relative; background: #0BC; color: #FFF; border-color: #0BC; }
+
+.right_column { padding: 0 10px; }
+
+.section { margin-bottom: 50px; }
+.section-prompt { color: #666; background: #EEE; padding: 15px 20px; font-weight: bold; }
+.section-prompt strong { color: #333; }
+.section-content { padding: 20px 0 0; }
+.section-content-indented { padding-left: 15px; padding-right: 15px; }
+
+#welcome {}
+
+#keynote {}
+.keynote-name { }
+.keynote-image { float: left; max-width: 200px; margin: 0 15px 10px 0; }
+
+#agenda { }
+.agenda-date { color: #777; }
+.agenda-time-column { width: 105px; }
+.agenda-name-column { font-weight: bold; }
+.agenda-venue-column { width: 140px; }
+
+#speakers {}
+#speakers
+.speaker { padding: 15px 0; }
+.speaker-image { float: left; max-width: 150px; margin: 0 15px 10px 0; padding: 2px; border: 1px solid #EEE; }
+.speaker-name { }
+
+#workshops {}
+.workshop { padding: 0 0 30px; }
+.workshop-name { color: forestGreen; }
+
+
+#about ul { margin-bottom: 15px; }
+#history ul { list-style: circle; }
+
+#host {}
+#host ul { list-style: circle; }
+#host ul li { padding: 5px 0; font-weight: bold; }
+#host h4 { color: #999; margin-top: 30px; }
+.host-list { margin-top: 2px; padding: 10px 20px; }
+
+
+.fb-title { color: #3b5998; border-color: #d4dae8; }	
+.fb-holder { background: #eceff6; padding: 20px 0 20px 20px; }
+
+.fb-like-box { background: #FFF; @include border-radius(3px); }

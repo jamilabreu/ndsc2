@@ -1,0 +1,38 @@
+- provide :title, "2013"
+
+= render "layouts/facebook"
+= render "header_2013"
+.container.content
+	.row
+		.span3
+			.left_column
+				%ul.nav.nav-tabs.nav-stacked{ "data-spy" => "affix", "data-offset-top" => "204" }
+					- [ "welcome", "keynote", "agenda", "speakers", "housing", "sponsors" ].each do |s|
+						%li{ class: s == "welcome" ? "active" : nil }
+							= link_to "##{s}" do
+								= s.titlecase
+								%i.icon-chevron-right
+					=# link_to "#", class: "btn btn-danger" doRegistration Coming Soon
+		.span9
+			.right_column
+				#welcome.section		
+					%h1 Welcome
+					.section-prompt
+						Each year, NDSC provides the highest quality in educational and empowering workshops, prominent and inspirational speakers, culturally influential movie screenings, art exhibitions, networking events, and parties – all of which serve to educate, uplift, and unite the Dominican student community.
+			
+				.section	
+					%h1.fb-title Facebook
+					/Feibú
+					.fb-holder
+						.fb-like-box{ "data-href" => "https://www.facebook.com/pages/National-Dominican-Student-Conference/47619937613", "data-width" => "639",  "data-show-faces" => "true", "data-border-color" => "#D4DAE8", "data-stream" => "false", "data-header" => "false"}
+					/
+						#keynote
+							%h1 Keynote
+						#agenda
+							%h1 Agenda
+						#speakers
+							%h1 Panelists
+						#housing
+							%h1 Housing
+						#sponsors
+							%h1 Sponsors
