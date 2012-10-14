@@ -18,6 +18,8 @@ gem 'meta_search', '>= 1.1.0.pre'
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'bourbon'
+
+gem 'devise'
 gem 'activeadmin'
 
 group :development do

@@ -213,6 +213,7 @@ DEPENDENCIES
   bourbon
   capybara
   coffee-rails (~> 3.2.1)
+  devise
   font-awesome-sass-rails
   growl
   guard-rspec
