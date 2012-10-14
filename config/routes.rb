@@ -1,4 +1,8 @@
 Ndsc::Application.routes.draw do
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   match '2012' => 'pages#twelve', as: 'twelve'
   match '2013' => 'pages#thirteen'
   

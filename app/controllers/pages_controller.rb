@@ -1,5 +1,8 @@
 class PagesController < ApplicationController
   def thirteen
+    @keynote = Speaker.where(year: "2013", keynote: true).first
+    @speakers = Speaker.where(year: "2013", keynote: false)
+    @workshops = Event.where(year: "2013", workshop: true)
   end
   def twelve
     @keynote = Speaker.where(year: "2012", keynote: true).first

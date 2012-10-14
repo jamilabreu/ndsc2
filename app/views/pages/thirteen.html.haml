@@ -7,9 +7,9 @@
 		.span3
 			.left_column
 				%ul.nav.nav-tabs.nav-stacked{ "data-spy" => "affix", "data-offset-top" => "204" }
-					- [ "welcome", "keynote", "agenda", "speakers", "housing", "sponsors" ].each do |s|
+					- [ "welcome", "keynote", "agenda", "speakers", "workshops", "housing", "sponsors", "contact" ].each do |s|
 						%li{ class: s == "welcome" ? "active" : nil }
-							= link_to "##{s}" do
+							= link_to "##{s.parameterize}" do
 								= s.titlecase
 								%i.icon-chevron-right
 					=# link_to "#", class: "btn btn-danger" doRegistration Coming Soon
@@ -25,6 +25,27 @@
 					/Feibú
 					.fb-holder
 						.fb-like-box{ "data-href" => "https://www.facebook.com/pages/National-Dominican-Student-Conference/47619937613", "data-width" => "639",  "data-show-faces" => "true", "data-border-color" => "#D4DAE8", "data-stream" => "false", "data-header" => "false"}
+				
+				- if @speakers.present?
+					/SPEAKERS
+					#speakers.section
+						%h1 Speakers & Panelists
+						.section-content
+						= render partial: "speaker", collection: @speakers
+				
+				- if @workshops.present?
+					/WORKSHOPS
+					#workshops.section
+						%h1 Workshops
+						.section-content
+							= render partial: "workshop", collection: @workshops
+				
+				/CONTACT US
+				#contact.section
+					%h1 Contact Us
+					.section-content
+						email
+					
 					/
 						#keynote
 							%h1 Keynote
