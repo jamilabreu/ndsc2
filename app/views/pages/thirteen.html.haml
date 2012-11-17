@@ -25,13 +25,35 @@
 					/Feibú
 					.fb-holder
 						.fb-like-box{ "data-href" => "https://www.facebook.com/pages/National-Dominican-Student-Conference/47619937613", "data-width" => "639",  "data-show-faces" => "true", "data-border-color" => "#D4DAE8", "data-stream" => "false", "data-header" => "false"}
-				
-				- if @speakers.present?
-					/SPEAKERS
-					#speakers.section
-						%h1 Speakers & Panelists
-						.section-content
-						= render partial: "speaker", collection: @speakers
+				/AGENDA
+				#agenda.section
+					%h1 Agenda
+					%br
+					
+					%table.table.table-striped.table-bordered
+						%h4.agenda-date Friday, April 6, 2012
+						%tbody
+							- Event.where("start_time BETWEEN ? AND ?", DateTime.parse('29th Mar 2013'), DateTime.parse('31th Mar 2013')).order("start_time").each do |event|
+								%tr
+									%td.agenda-time-column= event.agenda_time
+									%td.agenda-name-column= event.name
+									%td.agenda-venue-column= event.venue
+
+					%table.table.table-striped.table-bordered
+						%h4.agenda-date Saturday, April 7, 2012
+						%tbody
+							- Event.where("start_time BETWEEN ? AND ?", DateTime.parse('29th Mar 2013'), DateTime.parse('31th Mar 2013')).order("start_time").each do |event|
+								%tr
+									%td.agenda-time-column= event.agenda_time
+									%td.agenda-name-column= event.name
+									%td.agenda-venue-column= event.venue
+							
+				/- if @speakers.present?
+				/	/SPEAKERS
+				/	#speakers.section
+				/		%h1 Speakers & Panelists
+				/		.section-content
+				/		= render partial: "speaker", collection: @speakers
 				
 				- if @workshops.present?
 					/WORKSHOPS
