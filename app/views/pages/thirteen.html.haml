@@ -31,7 +31,7 @@
 					%br
 					
 					%table.table.table-striped.table-bordered
-						%h4.agenda-date Friday, April 6, 2012
+						%h4.agenda-date Friday, March 29, 2012
 						%tbody
 							- Event.where("start_time BETWEEN ? AND ?", DateTime.parse('29th Mar 2013'), DateTime.parse('30th Mar 2013')).order("start_time, name").each do |event|
 								%tr
@@ -40,7 +40,7 @@
 									%td.agenda-venue-column= event.venue
 
 					%table.table.table-striped.table-bordered
-						%h4.agenda-date Saturday, April 7, 2012
+						%h4.agenda-date Saturday, March 30, 2012
 						%tbody
 							- Event.where("start_time BETWEEN ? AND ?", DateTime.parse('30th Mar 2013'), DateTime.parse('31th Mar 2013')).order("start_time, name").each do |event|
 								%tr
@@ -48,6 +48,14 @@
 									%td.agenda-name-column= event.name
 									%td.agenda-venue-column= event.venue
 							
+					%table.table.table-striped.table-bordered
+						%h4.agenda-date Saturday, March 31, 2012
+						%tbody
+							- Event.where("start_time BETWEEN ? AND ?", DateTime.parse('31th Mar 2013'), DateTime.parse('1st Apr 2013')).order("start_time, name").each do |event|
+								%tr
+									%td.agenda-time-column= event.agenda_time
+									%td.agenda-name-column= event.name
+									%td.agenda-venue-column= event.venue							
 				/- if @speakers.present?
 				/	/SPEAKERS
 				/	#speakers.section
