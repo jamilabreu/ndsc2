@@ -7,7 +7,7 @@
 		.span3
 			.left_column
 				%ul.nav.nav-tabs.nav-stacked{ "data-spy" => "affix", "data-offset-top" => "204" }
-					- [ "welcome", "keynote", "agenda", "speakers", "workshops", "housing", "sponsors", "contact" ].each do |s|
+					- [ "welcome", "keynote", "agenda", "workshops", "housing", "sponsors", "contact" ].each do |s|
 						%li{ class: s == "welcome" ? "active" : nil }
 							= link_to "##{s.parameterize}" do
 								= s.titlecase
@@ -33,7 +33,7 @@
 					%table.table.table-striped.table-bordered
 						%h4.agenda-date Friday, April 6, 2012
 						%tbody
-							- Event.where("start_time BETWEEN ? AND ?", DateTime.parse('29th Mar 2013'), DateTime.parse('31th Mar 2013')).order("start_time").each do |event|
+							- Event.where("start_time BETWEEN ? AND ?", DateTime.parse('29th Mar 2013'), DateTime.parse('30th Mar 2013')).order("start_time").each do |event|
 								%tr
 									%td.agenda-time-column= event.agenda_time
 									%td.agenda-name-column= event.name
@@ -42,7 +42,7 @@
 					%table.table.table-striped.table-bordered
 						%h4.agenda-date Saturday, April 7, 2012
 						%tbody
-							- Event.where("start_time BETWEEN ? AND ?", DateTime.parse('29th Mar 2013'), DateTime.parse('31th Mar 2013')).order("start_time").each do |event|
+							- Event.where("start_time BETWEEN ? AND ?", DateTime.parse('30th Mar 2013'), DateTime.parse('31th Mar 2013')).order("start_time").each do |event|
 								%tr
 									%td.agenda-time-column= event.agenda_time
 									%td.agenda-name-column= event.name
