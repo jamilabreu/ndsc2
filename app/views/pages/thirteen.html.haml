@@ -15,21 +15,26 @@
 					=# link_to "#", class: "btn btn-danger" doRegistration Coming Soon
 		.span9
 			.right_column
-				#welcome.section		
+				#welcome.section
 					%h1 Welcome
 					.section-prompt
 						Each year, NDSC provides the highest quality in educational and empowering workshops, prominent and inspirational speakers, culturally influential movie screenings, art exhibitions, networking events, and parties – all of which serve to educate, uplift, and unite the Dominican student community.
-			
-				.section	
+
+				.section
 					%h1.fb-title Facebook
 					/Feibú
 					.fb-holder
 						.fb-like-box{ "data-href" => "https://www.facebook.com/pages/National-Dominican-Student-Conference/47619937613", "data-width" => "639",  "data-show-faces" => "true", "data-border-color" => "#D4DAE8", "data-stream" => "false", "data-header" => "false"}
+				.section
+					%h1.fb-title Twitter
+					= render "pages/twitter_twelve"
+
+
 				/AGENDA
 				#agenda.section
 					%h1 Agenda
 					%br
-					
+
 					%table.table.table-striped.table-bordered
 						%h4.agenda-date Friday, March 29, 2012
 						%tbody
@@ -47,35 +52,35 @@
 									%td.agenda-time-column= event.agenda_time
 									%td.agenda-name-column= event.name
 									%td.agenda-venue-column= event.venue
-							
+
 					%table.table.table-striped.table-bordered
-						%h4.agenda-date Saturday, March 31, 2012
+						%h4.agenda-date Sunday, March 31, 2012
 						%tbody
 							- Event.where("start_time BETWEEN ? AND ?", DateTime.parse('31th Mar 2013'), DateTime.parse('1st Apr 2013')).order("start_time, name").each do |event|
 								%tr
 									%td.agenda-time-column= event.agenda_time
 									%td.agenda-name-column= event.name
-									%td.agenda-venue-column= event.venue							
+									%td.agenda-venue-column= event.venue
 				/- if @speakers.present?
 				/	/SPEAKERS
 				/	#speakers.section
 				/		%h1 Speakers & Panelists
 				/		.section-content
 				/		= render partial: "speaker", collection: @speakers
-				
+
 				- if @workshops.present?
 					/WORKSHOPS
 					#workshops.section
 						%h1 Workshops
 						.section-content
 							= render partial: "workshop", collection: @workshops
-				
+
 					/CONTACT US
 					/#contact.section
 					/	%h1 Contact Us
 					/	.section-content
 					/		email
-					
+
 					/
 						#keynote
 							%h1 Keynote
